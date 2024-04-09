@@ -6,7 +6,7 @@
 /*   By: angerard <angerard@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 09:04:25 by angerard          #+#    #+#             */
-/*   Updated: 2024/04/09 13:24:21 by angerard         ###   ########.fr       */
+/*   Updated: 2024/04/09 22:15:09 by angerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,39 @@ void	*memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
+// VERSION TW0
+// void	*memmove(void *dst, const void *src, size_t len)
+// {
+// 	char		*cdst;
+// 	const char	*csrc;
+// 	size_t		i;
+
+// 	cdst = (char *)dst;
+// 	csrc = (const char *)src;
+// 	if (cdst == csrc || len == 0)
+// 		return (dst);
+// 	if (cdst > csrc && cdst < csrc + len)
+// 	{
+// 		i = len;
+// 		while (i != 0)
+// 		{
+// 			i--;
+// 			cdst[i] = csrc[i];
+// 		}
+// 	}
+// 	else
+// 	{
+// 		i = 0;
+// 		while (len != 0)
+// 		{
+// 			cdst[i] = csrc[i];
+// 			i++;
+// 			len--;
+// 		}
+// 	}
+// 	return (dst);
+// }
+
 // int	main(void)
 // {
 // 	char str[] = "Hello, world!";

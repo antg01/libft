@@ -1,47 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: angerard <angerard@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 16:46:21 by angerard          #+#    #+#             */
-/*   Updated: 2024/04/11 17:40:55 by angerard         ###   ########.fr       */
+/*   Created: 2024/04/15 14:40:13 by angerard          #+#    #+#             */
+/*   Updated: 2024/04/15 14:49:59 by angerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
-	if (!dst && !src)
-		return (NULL);
+	if (s == NULL)
+		return ;
 	i = 0;
-	if (dst > src)
+	while (s[i])
 	{
-		while (len--)
-		{
-			*((unsigned char *)dst + len) = *((unsigned char *)src + len);
-		}
+		write(fd, &s[i], 1);
+		i++;
 	}
-	else
-	{
-		while (len--)
-		{
-			*((unsigned char *)dst + i) = *((unsigned char *)src + i);
-			i++;
-		}
-	}
-	return (dst);
 }
 // int	main(void)
 // {
-// 	char	str[] = "Hello, world!";
+// 	char *str = "Hi";
+// 	char *err_str = "Error";
 
-// 	printf("before memmove: %s\n", str);
-// 	ft_memmove(str + 7, str + 2, 5);
-// 	printf("after memmove: %s\n", str);
+// 	ft_putstr_fd(str, 1);
+// 	ft_putstr_fd("\n", 1);
+// 	ft_putstr_fd(err_str, 2);
 // 	return (0);
 // }

@@ -6,7 +6,7 @@
 /*   By: angerard <angerard@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 12:19:13 by angerard          #+#    #+#             */
-/*   Updated: 2024/04/15 14:08:51 by angerard         ###   ########.fr       */
+/*   Updated: 2024/04/23 08:59:08 by angerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	len;
 	char	*result;
 
+	if (!s || !f)
+		return (NULL);
 	len = ft_strlen(s);
 	result = (char *)malloc(sizeof(char) * (len + 1));
 	if (!result)

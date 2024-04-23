@@ -6,44 +6,55 @@
 /*   By: angerard <angerard@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:26:26 by angerard          #+#    #+#             */
-/*   Updated: 2024/04/11 18:23:26 by angerard         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:39:21 by angerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_isspace(const char c)
+{
+	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f'
+		|| c == '\r')
+		return (1);
+	return (0);
+}
+
 int	ft_atoi(const char *str)
 {
-	size_t				i;
-	unsigned long int	base;
-	int					sign;
+	long int	base;
+	long int	base2;
+	int			sign;
 
-	i = 0;
 	base = 0;
+	base2 = 0;
 	sign = 1;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || str[i] == '\v'
-		|| str[i] == '\f' || str[i] == '\r')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		if (str[i] == '-')
+		if (*str == '-')
 			sign = -1;
-		i++;
+		str++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (*str >= '0' && *str <= '9')
 	{
-		base = 10 * base + (str[i] - '0');
-		i++;
+		base2 = base;
+		base = 10 * base + (*str - '0');
+		if (base < base2)
+			return (~sign >> 1);
+		str++;
 	}
 	return (base * sign);
 }
 
 // int	main(void)
 // {
-// 	char	str[] = "+ +-1234qwe231";
+// 	char	str[] = "9223372036854775807";
 // 	int		result;
 
 // 	result = ft_atoi(str);
 // 	printf("the result is %d \n", result);
+// 	printf("atoi is %d \n", atoi(str));
 // 	return (0);
 // }

@@ -6,7 +6,7 @@
 /*   By: angerard <angerard@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:02:06 by angerard          #+#    #+#             */
-/*   Updated: 2024/04/11 17:39:51 by angerard         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:43:49 by angerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ int main() {
     size_t n = sizeof(buf);
     char *p = ft_memchr(buf, c, n);
 
-    if (p != NULL) {
+    if (p != NULL)
+	{
         printf("Character '%c' found at address %p.\n", c, (void *)p);
         printf("The rest of the string is '%s'.\n", p);
-    } else {
-        printf("Character '%c' was not found in the first %zu bytes.\n", c, n);
     }
-
+	else
+        printf("Character '%c' was not found in the first %zu bytes.\n", c, n);
     return 0;
 }
 */

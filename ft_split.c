@@ -6,7 +6,7 @@
 /*   By: angerard <angerard@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:30:35 by angerard          #+#    #+#             */
-/*   Updated: 2024/04/15 10:35:18 by angerard         ###   ########.fr       */
+/*   Updated: 2024/04/23 08:54:34 by angerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,11 @@ static char	*get_next_word(const char *s, char c)
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**add_words_to_array(char const *s, char c, int words)
 {
-	int		words;
 	char	**array;
 	int		i;
 
-	words = word_count(s, c);
 	array = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!array)
 		return (NULL);
@@ -106,6 +104,17 @@ char	**ft_split(char const *s, char c)
 	array[words] = NULL;
 	return (array);
 }
+
+char	**ft_split(char const *s, char c)
+{
+	int	words;
+
+	if (!s)
+		return (NULL);
+	words = word_count(s, c);
+	return (add_words_to_array(s, c, words));
+}
+
 // int	main(void)
 // {
 // 	char const	*s;

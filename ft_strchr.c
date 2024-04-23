@@ -6,7 +6,7 @@
 /*   By: angerard <angerard@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 10:14:52 by angerard          #+#    #+#             */
-/*   Updated: 2024/04/10 13:10:27 by angerard         ###   ########.fr       */
+/*   Updated: 2024/04/18 09:14:51 by angerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,16 @@ int main() {
     const char *str = "Hello, world!";
     int search_char = 'o';
     char *result = ft_strchr(str, search_char);
-    if (result != NULL) {
+    if (result != NULL)
         printf("char '%c' found at index : %ld\n", search_char, result - str);
-    } else {
+	else
         printf("char '%c' not found.\n", search_char);
-    }
     search_char = 'z';
     result = ft_strchr(str, search_char);
-    if (result != NULL) {
-         printf("char '%c' found at index : %ld\n", search_char, result - str);
-    } else {
-         printf("char '%c' not found.\n", search_char);
-    }
+    if (result != NULL)
+        printf("char '%c' found at index : %ld\n", search_char, result - str);
+    else
+        printf("char '%c' not found.\n", search_char);
     return 0;
 }
 */

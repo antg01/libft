@@ -6,7 +6,7 @@
 /*   By: angerard <angerard@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 09:07:45 by angerard          #+#    #+#             */
-/*   Updated: 2024/04/10 09:41:43 by angerard         ###   ########.fr       */
+/*   Updated: 2024/04/23 09:10:46 by angerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 //     printf("Total length: %zu\n", result);
 
 // 	// test 2
-//     char smallDst[10] = "Hi";
-//     result = ft_strlcat(smallDst, ", World!", sizeof(smallDst));
-//     printf("Small dest after strlcat: %s\n", smallDst);
+//     char small_dst[10] = "Hi";
+//     result = ft_strlcat(small_dst, ", World!", sizeof(small_dst));
+//     printf("Small dest after strlcat: %s\n", small_dst);
 //     printf("Total length for small dest: %zu\n", result);
 //     return 0;
 // }

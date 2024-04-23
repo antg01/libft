@@ -6,7 +6,7 @@
 /*   By: angerard <angerard@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:57:35 by angerard          #+#    #+#             */
-/*   Updated: 2024/04/11 14:25:26 by angerard         ###   ########.fr       */
+/*   Updated: 2024/04/23 09:10:40 by angerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
 // int main()
 // {
 //     const char *haystack = "Hello World";

@@ -6,7 +6,7 @@
 /*   By: angerard <angerard@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 15:38:32 by angerard          #+#    #+#             */
-/*   Updated: 2024/04/10 16:00:59 by angerard         ###   ########.fr       */
+/*   Updated: 2024/04/18 09:30:14 by angerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,12 @@ int main() {
 
     int result = ft_strncmp(s1, s2, n);
 	printf("result : '%d'\n", result);
-    if (result < 0) {
+    if (result < 0)
         printf("'%s' is less than '%s' up to %zu characters.\n", s1, s2, n);
-    } else if (result > 0) {
+	else if (result > 0)
         printf("'%s' is greater than '%s' up to %zu characters.\n", s1, s2, n);
-    } else {
+    else
         printf("'%s' is equal to '%s' up to %zu characters.\n", s1, s2, n);
-    }
     return 0;
 }
 */

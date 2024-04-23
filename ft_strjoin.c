@@ -6,7 +6,7 @@
 /*   By: angerard <angerard@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 11:09:01 by angerard          #+#    #+#             */
-/*   Updated: 2024/04/12 11:45:06 by angerard         ###   ########.fr       */
+/*   Updated: 2024/04/23 08:37:55 by angerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len_str;
 	char	*joined_str;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len_str = ft_strlen(s1) + ft_strlen(s2);
 	joined_str = (char *)malloc(sizeof(char) * (len_str + 1));
 	if (!joined_str)
@@ -26,16 +28,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	j = 0;
 	while (s1[i])
-	{
-		joined_str[j++] = s1[i];
-		i++;
-	}
+		joined_str[j++] = s1[i++];
 	i = 0;
 	while (s2[i])
-	{
-		joined_str[j++] = s2[i];
-		i++;
-	}
+		joined_str[j++] = s2[i++];
 	joined_str[j] = 0;
 	return (joined_str);
 }
@@ -51,5 +47,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 //         printf("Resulting string: %s\n", result);
 //         free(result);
 //     }
-//     return 0;
+//     return (0);
 // }

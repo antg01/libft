@@ -21,13 +21,13 @@ CFLAGS = -Wall -Wextra -Werror
 %.o : %.c
 	${CC} ${CFLAGS} -c $< -o $@
 
+all: ${NAME}
+
 ${NAME}: ${OBJS}
 	${LIBC} ${NAME} ${OBJS}
 
-all: ${NAME}
-
 bonus: ${OBJSB}
-	${LIBC} ${NAME} ${OBJS} ${OBJSB}
+	${LIBC} ${NAME} ${OBJSB}
 
 clean:
 	${RM} ${OBJS} ${OBJSB}
